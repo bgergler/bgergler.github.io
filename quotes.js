@@ -1,4 +1,3 @@
-<script LANGUAGE="JavaScript">
 var quotes = [
 	{
 	 "quote":"In order to succeed, we must first believe that we can.",
@@ -25,4 +24,3 @@ var quotes = [
 	 "author":"Ayn Rand"
 	}
 ];
-</script>
