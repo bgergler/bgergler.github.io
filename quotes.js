@@ -22,5 +22,13 @@ var quotes = [
 	{
 	 "quote":"A creative man is motivated by the desire to achieve, not by the desire to beat others",
 	 "author":"Ayn Rand"
-	}
+	},
+	{
+	 "quote":"Life is 10% what happens to you and 90% how you react to it.",
+	 "author":"Charles R. Swindoll"
+	 },
+	 {
+		 "quote":"Make your life a masterpiece; imagine no limitations on what you can be, have, or do.",
+		 "author":"Brian Tracy"
+	 }
 ];
