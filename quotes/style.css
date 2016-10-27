@@ -9,17 +9,12 @@ btn-primary{
 h1{
   font-size:500%;
 }
-#quoteDisplay{
-  padding-left: 20px;
-  float: right;
-  height: 100%;
-}
 #author{
   text-align: right;
   margin-bottom: 30px;
 }
 #quoteBox{
-  padding: 25px 30px 25px 30px;
+  padding: 25px 30px 25px 50px;
   background-color: white;
   color: #006b8e;
   border-radius: 25px;
