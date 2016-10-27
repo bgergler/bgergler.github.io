@@ -17,9 +17,12 @@ $( document ).ready(function(){
 	}
 
   function getQuote(){
-  	$.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?",function(data){
-  	setQuote(data.quoteText,	data.quoteAuthor);
-  		});
+  	$.ajax("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=?",{
+      cache: false,
+      sucess: function(data){
+    setQuote(data[0].content, data[0].title);
+      };
+    });
   }
   getQuote();
 
