@@ -22,7 +22,7 @@ $( document ).ready(function(){
       cache: false,
       success: function(data){
         console.log("success");
-    setQuote(data[0].content.slice(3,data[0].content.length - 8), data[0].title);
+    setQuote(data[0].content.slice(3,data[0].content.length - 7), data[0].title);
       },
       error: function(XMLHttpRequest, textStatus, errorThrown){
         console.log("error");
