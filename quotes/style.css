@@ -9,6 +9,10 @@ btn-primary{
 h1{
   font-size:500%;
 }
+#quote{
+  width: 80%;
+  float: right;
+}
 #author{
   text-align: right;
   margin-bottom: 30px;
