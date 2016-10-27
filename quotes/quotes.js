@@ -20,7 +20,11 @@ $( document ).ready(function(){
   	$.ajax({
       url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=?',
       sucess: function(data){
+        console.log("sucess");
     setQuote(data[0].content, data[0].title);
+      },
+      error: function(XMLHttpRequest, textStatus, errorThrown){
+        console.log("error");
       }
     });
   }
