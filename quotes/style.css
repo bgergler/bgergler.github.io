@@ -12,6 +12,7 @@ h1{
 #quoteDisplay{
   width: 80%;
   float: right;
+  height: 100%;
 }
 #author{
   text-align: right;
