@@ -21,7 +21,7 @@ $( document ).ready(function(){
       cache: false,
       sucess: function(data){
     setQuote(data[0].content, data[0].title);
-      };
+      }
     });
   }
   getQuote();
