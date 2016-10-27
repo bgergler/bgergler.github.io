@@ -1,39 +1,29 @@
 $( document ).ready(function(){
-	var quotes = [
-	{
-	 "quote":"In order to succeed, we must first believe that we can.",
-	 "author":"Nikos Kazantzakis"
-	},
-	{
-	 "quote":"It does not matter how slowly you go as long as you do not stop.",
-	 "author":"Confucious"
-	},
-	{
-	 "quote":"Keep your eyes on the stars, and your feet on the ground.",
-	 "author":"Theodore Roosevelt"
-	},
-	{
-	 "quote":"Always do your best. What you plant now, you will harvest later.",
-	 "author":"Og Mandino"
-	},
-	{
-	 "quote":"It always seems impossible until its done.",
-	 "author":"Nelson Mandela"
-	},
-	{
-	 "quote":"A creative man is motivated by the desire to achieve, not by the desire to beat others",
-	 "author":"Ayn Rand"
-	},
-	{
-	 "quote":"Life is 10% what happens to you and 90% how you react to it.",
-	 "author":"Charles R. Swindoll"
-	 },
-	 {
-		 "quote":"Make your life a masterpiece; imagine no limitations on what you can be, have, or do.",
-		 "author":"Brian Tracy"
-	 }
-];
+	//function to set html (call inside getQuote)
+	//set onClick value of tweet button (move logic here to build URL)
+	function setQuote(quote, author){
+		
+	}
 
+function getQuote(){
+	var q;
+	$.getJSON("http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?",function(data){
+		
+	$(q).quoteText=data.quoteText;
+	$(q).author = data.quoteAuthor;
+
+		});
+		console.log(q);
+		return q;
+}
+var quote = getQuote();
+
+
+//console.log(json);
+$("#getQuote").on("click", function(){
+	
+});
+/* var quotes = [];
 //choose a random number between 0 and size of quotes array
   var quoteIndex = Math.floor((Math.random()*quotes.length));
   var splicedQuotes = [];
@@ -59,7 +49,7 @@ $( document ).ready(function(){
       splicedQuotes.push(quotes.pop());
         }
    
-    });
+    }); */
     //function to tweet
     $("#tweet-button").on("click", function(){
     //build a string for the twitter URL to post
@@ -75,4 +65,4 @@ $( document ).ready(function(){
       }
       window.open(twitterURL);
     });
-  });
+});
