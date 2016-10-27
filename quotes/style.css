@@ -6,8 +6,8 @@ body{
 btn-primary{
   color:  #006b8e;
 }
-#quote{
-  
+h1{
+  font-size:500%;
 }
 #author{
   text-align: right;

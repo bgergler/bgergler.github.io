@@ -1,27 +1,31 @@
 $( document ).ready(function(){
 	//function to set html (call inside getQuote)
 	//set onClick value of tweet button (move logic here to build URL)
+	var twitterURL = ""; 
 	function setQuote(quote, author){
-		
+		$("#quote").html("\"" + quote + "\"");
+    	$("#author").html("-" + author);
+	    //if quote, author, and punctiation is less than 140
+	    //assemble tweet
+	    twitterURL = 'https://twitter.com/intent/tweet?text=';
+	    if((quote.length + author.length + 4) <= 140){
+		     twitterURL += "%E2%80%9C" + encodeURIComponent(quote) + "%E2%80%9D -" + author;
+		}
+		     //if needed, truncate quote and add "..." to make room for the author
+		else{
+		     twitterURL += "%E2%80%9C" + encodeURIComponent(quote.slice(0, (140 - author.length - 7))) + "...%E2%80%9C -" + author;
+		}
 	}
 
 function getQuote(){
-	var q;
 	$.getJSON("http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?",function(data){
-		
-	$(q).quoteText=data.quoteText;
-	$(q).author = data.quoteAuthor;
-
+	setQuote(data.quoteText,	data.quoteAuthor);
 		});
-		console.log(q);
-		return q;
 }
-var quote = getQuote();
+getQuote();
 
-
-//console.log(json);
 $("#getQuote").on("click", function(){
-	
+	getQuote();
 });
 /* var quotes = [];
 //choose a random number between 0 and size of quotes array
@@ -52,17 +56,6 @@ $("#getQuote").on("click", function(){
     }); */
     //function to tweet
     $("#tweet-button").on("click", function(){
-    //build a string for the twitter URL to post
-    var twitterURL = 'https://twitter.com/intent/tweet?text=';
-      //if quote, author, and punctiation is less than 140
-      //assemble tweet
-    if((splicedQuotes[splicedQuotes.length - 1].quote.length +               splicedQuotes[splicedQuotes.length - 1].author.length + 4) <= 140){
-     twitterURL += "%E2%80%9C" + encodeURIComponent(splicedQuotes[splicedQuotes.length - 1].quote) + "%E2%80%9D -" + splicedQuotes[splicedQuotes.length - 1].author;
-    }
-      //if needed, truncate quote and add "..." to make room for the author
-      else{
-      twitterURL += "%E2%80%9C" + encodeURIComponent(splicedQuotes[splicedQuotes.length - 1].quote.slice(0, (140 - splicedQuotes[splicedQuotes.length - 1].author.length - 7))) + "...%E2%80%9C -" + splicedQuotes[splicedQuotes.length - 1].author;
-      }
-      window.open(twitterURL);
+    	window.open(twitterURL);
     });
 });
