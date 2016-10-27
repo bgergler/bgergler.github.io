@@ -20,7 +20,7 @@ $( document ).ready(function(){
   	$.ajax({
       url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=?',
       cache: false,
-      type: 'POST',
+      type: 'GET',
       sucess: function(data){
     setQuote(data[0].content, data[0].title);
       }
