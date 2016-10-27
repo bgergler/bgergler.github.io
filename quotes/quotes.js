@@ -19,6 +19,7 @@ $( document ).ready(function(){
   function getQuote(){
   	$.ajax({
       url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=?',
+      cache: false,
       success: function(data){
         console.log("success");
     setQuote(data[0].content, data[0].title);
