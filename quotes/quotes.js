@@ -2,7 +2,7 @@ $( document ).ready(function(){
 	var twitterURL = ""; 
 	function setQuote(quote, author){
     //set html on page
-		$("#quote").html("\"" + quote + "\"");
+		$("#quote").html(quote);
     	$("#author").html("-" + author);
 	    //if quote, author, and punctiation is less than 140
 	    //assemble tweet URL
