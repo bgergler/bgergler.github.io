@@ -18,21 +18,28 @@ body{
 	width: 100px;
 }
 #displayAll{
-	width: 100px;
+	width: 50px;
+	display: block;
+	float: right;
+	clear: both;
 }
 #displayOnline{
-	width: 10px;
+
+
+
 }
 #displayOffline{
-	width: 10px;
+	
+	float: right;
+	clear: both;
 }
 .displayOptions{
 	margin-top: 3px;
-	transition: width 2s;
-	float: right;
+	transition: width .5s;
 	overflow: hidden;
-	display: block;
+		float: right;
+	clear: both;
 }
-.displayOptions: hover{
-	width: 100px !important;
+.activeDisplay{
+	width: 50px!important;
 }
